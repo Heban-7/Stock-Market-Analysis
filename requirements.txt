@@ -1,5 +1,6 @@
 python 3x.
 pandas 
+seaborn
 numpy 
 matplotlib 
 nltk 
