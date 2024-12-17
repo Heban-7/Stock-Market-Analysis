@@ -6,4 +6,4 @@ matplotlib
 nltk 
 wordcloud
 TA-Lib
-
+plotly
