@@ -67,4 +67,24 @@ class FinancialAnalyzer:
                       title='Bollinger Bands with Stock Price')
         fig.show()
 
+    def calculate_portfolio_weights(self, tickers, data_path):
+        """
+        Optimize portfolio weights using PyPortfolioOpt with local data.
+        """
+        all_data = {}
+        for ticker in tickers:
+            file_path = f"{data_path}/{ticker}.csv"
+            stock_data = pd.read_csv(file_path, parse_dates=['Date'], index_col='Date')
+            all_data[ticker] = stock_data['Close']
+
+        # Combine close prices into a single DataFrame
+        data = pd.DataFrame(all_data)
+
+        # Portfolio Optimization
+        mu = expected_returns.mean_historical_return(data)
+        cov = risk_models.sample_cov(data)
+        ef = EfficientFrontier(mu, cov)
+        weights = ef.max_sharpe()
+        return ef.clean_weights(), ef.portfolio_performance()
+    
 

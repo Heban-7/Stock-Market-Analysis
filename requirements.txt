@@ -5,3 +5,5 @@ numpy
 matplotlib 
 nltk 
 wordcloud
+TA-Lib
+
