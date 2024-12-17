@@ -9,6 +9,10 @@ Analyze Stock market news to explore sentiment trends and their connection to st
 **Exploratory Data Analysis (EDA)**: Analyze publishers and headline lengths.
 **Sentiment Analysis**: Classify news as Positive, Neutral, or Negative using NLTK's VADER.
 **Visualizations**: Generate word clouds and publisher contribution charts.
+**Stock price analysis**
+* Technical Indicator anaysis using TA-lib
+* Technical Indicator Visualization
+* pyfolio analysis
 
 
 ## Technologies Used
